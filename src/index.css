@@ -145,7 +145,6 @@ button:focus-visible {
 }
 .board {
   display: grid;
-  /* Hardcoded board sizing */
   grid-template-columns: repeat(10, 28px);
   grid-auto-rows: 28px;
   background: #111;

@@ -11,23 +11,21 @@ const ACTIONS = {
 } as const;
 
 //these actions can be only one of the values from the ACTIONS
-type ActionType = typeof ACTIONS[keyof typeof ACTIONS];
-
+type ActionType = (typeof ACTIONS)[keyof typeof ACTIONS];
 
 interface ConsoleAreaUIProps {
   onAction: (action: ActionType) => void;
   gameState: "playing" | "paused" | "gameover" | "idle";
 }
 
-function ConsoleAreaUI({onAction, gameState}: ConsoleAreaUIProps) {
-  
+function ConsoleAreaUI({ onAction, gameState }: ConsoleAreaUIProps) {
   const isPlaying = gameState === "playing";
 
   function handlePress(action: ActionType) {
     onAction(action);
   }
 
-   return (
+  return (
     <Box
       sx={{
         display: "flex",
@@ -38,6 +36,7 @@ function ConsoleAreaUI({onAction, gameState}: ConsoleAreaUIProps) {
         backgroundColor: "#0a0a18",
         borderRadius: 4,
         border: "1px solid #00f5ff22",
+        maxHeight: "500px",
       }}
     >
       <Box sx={{ display: "flex", gap: 2 }}>
@@ -61,11 +60,9 @@ function ConsoleAreaUI({onAction, gameState}: ConsoleAreaUIProps) {
         >
           ⏸ Pause
         </Button>
-
       </Box>
 
       <Box sx={{ display: "flex", gap: 4, alignItems: "center" }}>
-
         {/* A BUTTON — moves piece left */}
         <Button
           variant="outlined"
@@ -105,12 +102,10 @@ function ConsoleAreaUI({onAction, gameState}: ConsoleAreaUIProps) {
         >
           D
         </Button>
-
       </Box>
 
       {/* W = TBD (placeholder), S = soft drop */}
       <Box sx={{ display: "flex", gap: 4 }}>
-
         {/* W BUTTON — no action yet*/}
         <Button
           variant="outlined"
@@ -130,7 +125,6 @@ function ConsoleAreaUI({onAction, gameState}: ConsoleAreaUIProps) {
         >
           S
         </Button>
-
       </Box>
     </Box>
   );
