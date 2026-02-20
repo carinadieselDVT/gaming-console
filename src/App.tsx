@@ -1,19 +1,14 @@
 import { useState } from "react";
-import "./App.css";
-import ConsoleAreaUI from "./components/ConsoleAreaUI";
-import HapticScreen from "./components/HapticScreen";
+import "./styles/App.css";
+import { ConsoleAreaUI, HapticScreen } from "./components";
 import { Box } from "@mui/material";
 
 function App() {
-  const [message, setMessage] = useState<string>("");
-
   return (
-    <>
-      <Box>
-        <HapticScreen message={message} />
-        <ConsoleAreaUI onAction={setMessage} />
-      </Box>
-    </>
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      <HapticScreen />
+      <ConsoleAreaUI />
+    </div>
   );
 }
 
