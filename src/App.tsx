@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/App.css";
-import { ConsoleAreaUI, HapticScreen } from "./components";
-import { Box } from "@mui/material";
+import ConsoleAreaUI from "./components/layout/ConsoleAreaUI";
+import HapticScreen from "./components/layout/HapticScreen";
 
 function App() {
   return (
