@@ -1,0 +1,23 @@
+:root {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #060612;
+
+  /* Makes text look crisp on all screens */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-width: 320px;
+}
+
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
